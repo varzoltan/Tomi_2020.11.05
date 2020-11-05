@@ -1,0 +1,7 @@
+C:\Users\Rendszergazda\Documents\GitHub\Tomi_2020.11.05\Tomi_2020.11.05\bin\Debug\Tomi_2020.11.05.exe.config
+C:\Users\Rendszergazda\Documents\GitHub\Tomi_2020.11.05\Tomi_2020.11.05\bin\Debug\Tomi_2020.11.05.exe
+C:\Users\Rendszergazda\Documents\GitHub\Tomi_2020.11.05\Tomi_2020.11.05\bin\Debug\Tomi_2020.11.05.pdb
+C:\Users\Rendszergazda\Documents\GitHub\Tomi_2020.11.05\Tomi_2020.11.05\obj\Debug\Tomi_2020.11.05.csprojAssemblyReference.cache
+C:\Users\Rendszergazda\Documents\GitHub\Tomi_2020.11.05\Tomi_2020.11.05\obj\Debug\Tomi_2020.11.05.csproj.CoreCompileInputs.cache
+C:\Users\Rendszergazda\Documents\GitHub\Tomi_2020.11.05\Tomi_2020.11.05\obj\Debug\Tomi_2020.11.05.exe
+C:\Users\Rendszergazda\Documents\GitHub\Tomi_2020.11.05\Tomi_2020.11.05\obj\Debug\Tomi_2020.11.05.pdb
