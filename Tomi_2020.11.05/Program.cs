@@ -97,7 +97,7 @@ namespace Tomi_2020._11._05
             int Bnap = int.Parse(Bdb[2]);
             for (int i = 0;i<n;i++)
             {
-                if (adatok[i].datum.Substring(0,1) == "2" || adatok[i].datum.Substring(0, 1) == "2")
+                if (adatok[i].datum.Substring(0,1) == "2")
                 {
                     string[] darab = adatok[i].datum.Split('.');
                     int ev = int.Parse(darab[0]);
@@ -110,7 +110,74 @@ namespace Tomi_2020._11._05
                 }
                  
             }
+
+            //7.feladat
+            Console.Write("7.Feladat\nAdjon meg egy napot rövidítve: ");
+            string hetesfeladat = Console.ReadLine();
+            string sorozatnev = null;
+            int g = 0;
+            for (int i =0;i<n;i++)
+            {
+                if (adatok[i].datum != "NI")
+                {
+                    string sor = adatok[i].datum;
+                    string[] db = sor.Split('.');
+                    int ev = int.Parse(db[0]);
+                    int ho = int.Parse(db[1]);
+                    int napok = int.Parse(db[2]);
+                    if (Hetnapja(ev, ho, napok) == hetesfeladat)
+                    {
+                        if(sorozatnev != adatok[i].nev)
+                        {
+                            Console.WriteLine(adatok[i].nev);
+                            sorozatnev = adatok[i].nev;
+                        }
+                        
+                    }
+                    
+                }
+            }
+            if (sorozatnev==null)
+            {
+                Console.WriteLine("Az adott napon nem kerül adásba sorozat.");
+            }
+
+            //8.feladat
+            StreamWriter ir = new StreamWriter(@"C:\Users\Rendszergazda\Downloads\summa.txt");
+            int osszegzes = 0;
+            int szamol = 0;
+            for (int i = 0;i<n;i++)
+            {
+                if(adatok[i].nev == adatok[i + 1].nev)
+                {
+                    osszegzes += adatok[i].hossz;
+                    szamol++;
+                }
+                else
+                {
+                    osszegzes += adatok[i].hossz;
+                    szamol++;
+                    ir.WriteLine($"{adatok[i].nev} {osszegzes} {szamol}");
+                    osszegzes = 0;
+                    szamol = 0;
+                }
+                
+            }
+            ir.Close();
             Console.ReadKey();
+        }
+
+        //6.feladat: Hetnapja függvény megírása
+        static string Hetnapja(int ev, int ho, int nap)
+        {
+            string[] napok = { "v", "h", "k", "sze", "cs", "p", "szo" };
+            int[] honapok = {0,3,2,5,0,3,5,1,4,6,2,4};          
+            
+            if (ho<3)
+            {
+                ev = ev - 1;
+            }          
+            return napok[(ev + ev / 4 - ev/100 + ev/400 + honapok[ho-1] + nap) %7];
         }
     }
 }
